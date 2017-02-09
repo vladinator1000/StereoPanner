@@ -1,0 +1,2 @@
+# StereoPanner
+JUCE plugin
