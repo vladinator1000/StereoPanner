@@ -143,12 +143,12 @@ void StereoPannerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBu
     float *channelDataR = buffer.getWritePointer(1);
     
     // calculate p dash
-    float pDash = (panPosition + 1.0) / 2.0;
+    float pDash = 3.14159 * (panPosition + 1.0) / 4.0;
     
     for (int i = 0; i < numSamples; i++)
     {
-        channelDataL[i] *= (1.0 - pDash);
-        channelDataR[i] *= pDash;
+        channelDataL[i] *= std::cos(pDash);
+        channelDataR[i] *= std::sin(pDash);
     }
 }
 
